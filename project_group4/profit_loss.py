@@ -11,5 +11,13 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 
 net_profit = []
 
-for row in reader:
-    if row[4]
+for line in reader:
+    net_profit.append(float(line[4]))
+
+summary_path = Path.cwd()/"summary_reports.txt"
+
+def net_profit_diff():
+    """
+    -
+    -
+    """
