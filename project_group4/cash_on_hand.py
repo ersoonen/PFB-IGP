@@ -1,4 +1,6 @@
 ## this will be used as module
+
+# imported Path from pathlib and imported csv
 from pathlib import Path
 import csv
 
@@ -32,12 +34,12 @@ def cash_on_hand_diff():
     - No parameters required.
     """
     
-    #
+    # 
     for number in range(0,(len(cash_on_hand_amt)-1)):
         first_day = cash_on_hand_amt[number]
         second_day = cash_on_hand_amt[number+1]
 
-        #
+        # 
         if first_day > second_day:
             difference = first_day - second_day
             difference_day = cash_on_hand_list[number+1][0]
@@ -47,6 +49,6 @@ def cash_on_hand_diff():
                 
                 # used .write() method and f strings to create and write the days where
                 # there are cash deficit and its respective amount
-                file.write(f"[CASH DEFICIT] DAY{difference_day}, AMOUNT : USD{difference}" + "\n")
+                file.write(f"[CASH DEFICIT] DAY: {difference_day}, AMOUNT: USD{difference}" + "\n")
 
 
