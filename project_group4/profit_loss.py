@@ -6,7 +6,7 @@ import csv
 
 # created fp variable and assigned the file path to the profit-and-loss-usd.csv to it
 fp = Path.cwd()/"project_group4"/"csv_reports"/"profit-and-loss-usd.csv"
-
+print(fp.exists())
 # 
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
@@ -18,7 +18,7 @@ for line in reader:
     net_profit_list.append(float(line))
     net_profit_list.append(float(line[4]))
 
-summary_path = Path.cwd()/"summary_reports.txt"
+summary_path = Path.cwd()/"project_group4"/"summary_reports.txt"
 
 def net_profit_diff():
     """

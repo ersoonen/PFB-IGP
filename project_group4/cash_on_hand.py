@@ -24,7 +24,7 @@ with fp.open(mode ="r", encoding = "UTF-8", newline = "") as file:
         cash_on_hand_amt.append(float(line[1]))
 
 # created summary_path variable and assigned the path to the summary_reports.txt to it
-summary_path = Path.cwd()/"summary_reports.txt"
+summary_path = Path.cwd()/"project_group4"/"summary_reports.txt"
 
 # Used def keyword to create the cash_on_hand_diff() function
 def cash_on_hand_diff():
