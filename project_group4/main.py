@@ -1,4 +1,4 @@
-## this is my main file
+## This is our main file, where solutions are printed.
 
 ## import modules
 import cash_on_hand, overheads, profit_loss
