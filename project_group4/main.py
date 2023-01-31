@@ -1,18 +1,18 @@
 ## this is my main file
 
 ## import modules
-import adder, greeter, dbs
+import cash_on_hand, overheads, profit_loss
 
 ## call with module.function()
 
 ## call the first function in adder module
-value = adder.add(2, 2)
+value = cash_on_hand.add(2, 2)
 print(value) 
 
-double_value = adder.double(value)
+double_value = cash_on_hand.double(value)
 print(double_value)
 
-print(greeter.greet("Mike"))
+print(overheads.greet("Mike"))
 
-dbs.dbsacp_function()
+profit_loss.dbsacp_function()
 
