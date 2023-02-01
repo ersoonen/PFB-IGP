@@ -1,4 +1,4 @@
-## this will be used as module
+## This will be used as a module
 
 #imported Path from pathlib and imported csv
 from pathlib import Path
@@ -35,17 +35,20 @@ def net_profit_diff():
     - No parameters required
     """
     
-    #
     for number in range(0,(len(net_profit_amt)-1)):
         previous_day = net_profit_amt[number]
         current_day = net_profit_amt[number+1]
 
-        #
-        if previous_day > current_day:
+        # Creates condition that if current day value is less than previous day value, it will return
+        # the difference amount or the profit deficit with the latest day printed.
+        if current_day < previous_day:
             difference = previous_day - current_day
             difference_day = net_profit_list[number+1][0]
 
-            # Write the results to a text file
+            # Used if statement, summary_path and .open() method to append lines
             with fp_write.open(mode="a", encoding="UTF-8", newline="") as file:
-                file.write(f"[PROFIT DEFICIT] DAY: {difference_day}, AMOUNT: USD ${difference}" + "\n")
+
+                # Used .write() method and f strings to create and write the days where
+                # there are net profit deficit and its respective amount
+                file.write(f"[NET PROFIT DEFICIT] DAY: {difference_day}, AMOUNT: USD ${difference}" + "\n")
 

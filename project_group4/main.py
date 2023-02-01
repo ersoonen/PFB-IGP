@@ -10,4 +10,5 @@ def main():
     profit_loss.net_profit_diff()
     cash_on_hand.cash_on_hand_diff()
 
+# Will print out the summar report text file, consolidating everything.
 main()

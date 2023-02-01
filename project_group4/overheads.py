@@ -1,10 +1,10 @@
-## will be used as a module
+## This will be used as a module
 
 # Imported Path from pathlib and imported csv
 from pathlib import Path
 import csv
 
-# Setup file path for reading
+# Created fp_read variable and assigned the file path to the overheads-day-90.csv to it
 fp_read = Path.cwd()/"project_group4"/"csv_reports"/"overheads-day-90.csv"
 
 # Create 2 empty lists to store the data into the list
@@ -35,15 +35,20 @@ def highest_overhead_amt():
     - No parameters required
     """
     
+    # Used the max() function to filter out the highest percentage value
     highest_overheads = max(highest_category_amt)
 
     for name in highest_category_list:
         
+        # Using 'if' function to match the overhead value to the list
         if name[1] == str(highest_overheads):
             highest_overheads_title = name[0]
             
-            # Write the results to a text file
-            with fp_write.open(mode="a", encoding="UTF8", newline="") as file:        
+            # Used if statement, summary_path and .open() method to append lines
+            with fp_write.open(mode="a", encoding="UTF8", newline="") as file: 
+
+                # Used .write() method and f strings to create and write the highest overhead title 
+                # and its respective amount       
                 file.write(f"[HIGHEST OVERHEADS] {highest_overheads_title}: {highest_overheads}%" + "\n")
 
 

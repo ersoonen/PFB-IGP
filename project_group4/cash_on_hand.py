@@ -1,4 +1,4 @@
-## This will be used as module
+## This will be used as a module
 
 # Imported Path from pathlib and imported csv
 from pathlib import Path
@@ -15,6 +15,8 @@ cash_on_hand_amt = []
 with fp_read.open(mode ="r", encoding = "UTF-8", newline = "") as file:
     # .reader reads the data in the csv file
     reader = csv.reader(file)
+
+    # To skip reading header
     next(reader)
 
     # Create a for loop and used it to loop through and append the days to cash_on_hand_list
@@ -34,12 +36,12 @@ def cash_on_hand_diff():
     - No parameters required
     """
     
-    # 
     for number in range(0,(len(cash_on_hand_amt)-1)):
         day_1 = cash_on_hand_amt[number]
         day_2 = cash_on_hand_amt[number+1]
 
-        # 
+        # Creates condition that if current day (day_1) value is less than previous day (day_2) value, 
+        # it will return the difference amount or the cash deficit with the latest day printed.
         if day_1 < day_2:
             difference = day_2 - day_1
             difference_day = cash_on_hand_list[number+1][0]
@@ -48,7 +50,7 @@ def cash_on_hand_diff():
             # Used if statement, summary_path and .open() method to append lines
             with fp_write.open(mode="a", encoding="UTF-8", newline="") as file:
                 
-                # used .write() method and f strings to create and write the days where
+                # Used .write() method and f strings to create and write the days where
                 # there are cash deficit and its respective amount
                 file.write(f"[CASH DEFICIT] DAY: {difference_day}, AMOUNT: USD ${difference}" + "\n")
                 
