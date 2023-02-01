@@ -22,7 +22,7 @@ with fp_read.open(mode="r", encoding="UTF8", newline="") as file:
             highest_category_amt.append(float(row[1]))
 
 ## setup filepath for writing results 
-fp_write = Path.cwd()/"project_group4"/"summary_reports.txt"
+fp_write = Path.cwd()/"project_group4"/"summary_report.txt"
 
 def highest_function():
     

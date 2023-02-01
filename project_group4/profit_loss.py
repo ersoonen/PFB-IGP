@@ -5,9 +5,9 @@ from pathlib import Path
 import csv
 
 # created fp variable and assigned the file path to the profit-and-loss-usd.csv to it
-fp = Path.cwd()/"project_group4"/"csv_reports"/"profit-and-loss-usd.csv"
+fp_read = Path.cwd()/"project_group4"/"csv_reports"/"profit-and-loss-usd.csv"
 
-with fp.open(mode="r", encoding="UTF-8", newline="") as file:
+with fp_read.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
     next(reader)
 
@@ -18,7 +18,7 @@ for line in reader:
     net_profit_list.append(line)
     net_profit_amt.append(float(line[4]))
 
-summary_path = Path.cwd()/"project_group4"/"summary_reports.txt"
+fp_write = Path.cwd()/"project_group4"/"summary_report.txt"
 
 def net_profit_diff():
     """
@@ -34,7 +34,6 @@ def net_profit_diff():
             difference = previous_day - current_day
             difference_day = net_profit_list[number+1][0]
 
-            with summary_path.open(mode='a', encoding='UTF-8', newline="") as file:
+            with fp_write.open(mode='a', encoding='UTF-8', newline="") as file:
                 file.write(f"[PROFIT DEFICIT] DAY: {difference_day}", f"AMOUNT: USD{difference}" + "\n")
 
-print(net_profit_diff())
