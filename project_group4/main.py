@@ -1,11 +1,13 @@
-## This is our main file, where solutions are printed.
+## This is our main file, where solutions are printed to the text file.
 
-# import modules
-import cash_on_hand,overheads
+# Import modules
+import cash_on_hand,overheads,profit_loss
 
-# call with module.function()
+# Call with module.function()
 def main():
+    
+    overheads.highest_overhead_amt()
+    profit_loss.net_profit_diff()
     cash_on_hand.cash_on_hand_diff()
-    overheads.highest_function()
 
 main()

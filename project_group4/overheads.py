@@ -1,30 +1,39 @@
 ## will be used as a module
 
-## import required modules
+# Imported Path from pathlib and imported csv
 from pathlib import Path
 import csv
 
-## setup file path for reading
+# Setup file path for reading
 fp_read = Path.cwd()/"project_group4"/"csv_reports"/"overheads-day-90.csv"
 
+# Create 2 empty lists to store the data into the list
 highest_category_list = []
 highest_category_amt = []
 
+# Using the .open() function to access the csv file which is for reading 
 with fp_read.open(mode="r", encoding="UTF8", newline="") as file:
-        reader = csv.reader(file) # create csv reader object using csv        
+        # Create csv reader object using csv
+        reader = csv.reader(file)         
         
-        # to skip reading header 
+        # To skip reading header 
         next(reader)                     
         
-        # iterate each row with loop
+        # Iterate each row with 'for' loop and append the title of the overheads to highest_categrot_list
+        # and the respective percentage values to highest_category_amt
         for row in reader:
             highest_category_list.append(row)
             highest_category_amt.append(float(row[1]))
 
-## setup filepath for writing results 
+# Setup filepath to "summary_report.txt" for writing results 
 fp_write = Path.cwd()/"project_group4"/"summary_report.txt"
 
-def highest_function():
+# Used def keyword to create the highest_overhead_amt() function
+def highest_overhead_amt():
+    """
+    - This function calculates the highest overhead percentage amount
+    - No parameters required
+    """
     
     highest_overheads = max(highest_category_amt)
 
@@ -33,8 +42,8 @@ def highest_function():
         if name[1] == str(highest_overheads):
             highest_overheads_title = name[0]
             
-            # write the result to a text file
-            with fp_write.open(mode="w", encoding="UTF8", newline="") as file:        
+            # Write the results to a text file
+            with fp_write.open(mode="a", encoding="UTF8", newline="") as file:        
                 file.write(f"[HIGHEST OVERHEADS] {highest_overheads_title}: {highest_overheads}%" + "\n")
 
 
