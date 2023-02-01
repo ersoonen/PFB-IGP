@@ -25,13 +25,16 @@ def highest_function():
         
         # iterate each row with loop
         for row in reader:
+            highest_category_list.append(row[0])
             highest_category_list.append(float(row[1]))
  
-        # created category vairable and used max() to find the highest value in
-        # highest_category_list. Assigned this value to the category variable
-        category = max(highest_category_list)
+            # created category vairable and used max() to find the highest value in
+            # highest_category_list. Assigned this value to the category variable
+            category = max(highest_category_list[1])
+            overhead = category[]
  
     # write the result to a text file
     with fp_write.open(mode="w", encoding="UTF8", newline="") as file:        
-        file.write(f"[HIGHEST OVERHEADS] {}: {category}%" + "\n")
+        file.write(f"[HIGHEST OVERHEADS] {overhead}: {category}%" + "\n")
+
 

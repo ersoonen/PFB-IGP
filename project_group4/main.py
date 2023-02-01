@@ -1,18 +1,15 @@
 ## This is our main file, where solutions are printed.
 
-## import modules
+# import modules
 import cash_on_hand, overheads, profit_loss
 
-## call with module.function()
+# call with module.function()
 
-## call the first function in adder module
-value = cash_on_hand.add(2, 2)
-print(value) 
+# call the first function in overheads module
+first = overheads.highest_function()
 
-double_value = cash_on_hand.double(value)
-print(double_value)
+# call the second function in cash_on_hand module
+second = cash_on_hand.cash_on_hand_diff()
 
-print(overheads.greet("Mike"))
-
-profit_loss.dbsacp_function()
-
+# call the third function in profit_loss module
+third = profit_loss.net_profit_diff()
