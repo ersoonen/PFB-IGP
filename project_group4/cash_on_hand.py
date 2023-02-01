@@ -24,7 +24,7 @@ with fp.open(mode ="r", encoding = "UTF-8", newline = "") as file:
         cash_on_hand_amt.append(float(line[1]))
 
 # created summary_path variable and assigned the path to the summary_reports.txt to it
-summary_path = Path.cwd()/"project_group4"/"summary_reports.txt"
+fp_write = Path.cwd()/"project_group4"/"summary_reports.txt"
 
 # Used def keyword to create the cash_on_hand_diff() function
 def cash_on_hand_diff():
@@ -45,10 +45,12 @@ def cash_on_hand_diff():
             difference_day = cash_on_hand_list[number+1][0]
 
             # Used if statement, summary_path and .open() method to append lines
-            with summary_path.open(mode='a', encoding='UTF-8', newline="") as file:
+            with fp_write.open(mode='a', encoding='UTF-8', newline="") as file:
                 
                 # used .write() method and f strings to create and write the days where
                 # there are cash deficit and its respective amount
                 file.write(f"[CASH DEFICIT] DAY: {difference_day}, AMOUNT: USD{difference}" + "\n")
+                
+
 
 

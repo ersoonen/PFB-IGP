@@ -7,17 +7,10 @@ import csv
 ## setup file path for reading
 fp_read = Path.cwd()/"project_group4"/"csv_reports"/"overheads-day-90.csv"
 
-## setup filepath for writing results 
-fp_write = Path.cwd()/"project_group4"/"summary_reports.txt"
+highest_category_list = []
+highest_category_amt = []
 
-def highest_function():    
-    fp_read = Path.cwd()/"project_group4"/"csv_reports"/"overheads-day-90.csv"    
-    fp_write = Path.cwd()/"project_group4"/"summary_reports.txt"    
-    fp_write.touch()
-   
-    highest_category_list= []
- 
-    with fp_read.open(mode="r", encoding="UTF8", newline="") as file:
+with fp_read.open(mode="r", encoding="UTF8", newline="") as file:
         reader = csv.reader(file) # create csv reader object using csv        
         
         # to skip reading header 
@@ -25,16 +18,26 @@ def highest_function():
         
         # iterate each row with loop
         for row in reader:
-            highest_category_list.append(row[0])
-            highest_category_list.append(float(row[1]))
- 
-            # created category vairable and used max() to find the highest value in
-            # highest_category_list. Assigned this value to the category variable
-            category = max(highest_category_list[1])
-            overhead = category[]
- 
-    # write the result to a text file
-    with fp_write.open(mode="w", encoding="UTF8", newline="") as file:        
-        file.write(f"[HIGHEST OVERHEADS] {overhead}: {category}%" + "\n")
+            highest_category_list.append(row)
+            highest_category_amt.append(float(row[1]))
+
+## setup filepath for writing results 
+fp_write = Path.cwd()/"project_group4"/"summary_reports.txt"
+
+def highest_function():
+    
+    highest_overheads = max(highest_category_amt)
+
+    for name in highest_category_list:
+        
+        if name[1] == str(highest_overheads):
+            highest_overheads_title = name[0]
+            
+            # write the result to a text file
+            with fp_write.open(mode="w", encoding="UTF8", newline="") as file:        
+                file.write(f"[HIGHEST OVERHEADS] {highest_overheads_title}: {highest_overheads}%" + "\n")
+
+
+    
 
 
