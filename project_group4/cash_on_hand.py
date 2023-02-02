@@ -52,7 +52,7 @@ def COH_diff():
                 
                 # Used .write() method and f strings to create and write the days where
                 # there are cash deficit and its respective amount
-                file.write(f"[CASH DEFICIT] DAY: {difference_day}, AMOUNT: USD ${difference}" + "\n")
+                file.write(f"[CASH DEFICIT] DAY: {difference_day}, AMOUNT: USD{difference}" + "\n")
 
     
 
