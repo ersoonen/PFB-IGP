@@ -10,8 +10,8 @@ def main():
     - No parameters required.
     """
     overheads.highest_overhead_amt()
-    profit_loss.net_profit_diff()
     cash_on_hand.COH_diff()
+    profit_loss.net_profit_diff()
     
     
 # Will print out the summary report text file, consolidating everything.
