@@ -3,7 +3,7 @@
 # Import modules
 import cash_on_hand,overheads,profit_loss
 
-# Call with module.function()
+# Call other modules cash_on_hand, overheads, profit lost with module.function()
 def main():
     """
     - This function will get functions from other modules and execute
