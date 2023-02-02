@@ -8,6 +8,7 @@ import csv
 fp_read = Path.cwd()/"project_group4"/"csv_reports"/"cash-on-hand-usd.csv"
 
 # Create 2 empty lists to store the data into the list
+# two separate lists were made, list and amount so that program would be able to find information more effectively 
 cash_on_hand_list = []
 cash_on_hand_amt = []
 
