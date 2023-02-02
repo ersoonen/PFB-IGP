@@ -14,5 +14,5 @@ def main():
     profit_loss.net_profit_diff()
     
     
-# Will print out the summary report text file, consolidating everything.
+# This prints out the summary report text file, consolidating everything.
 main()
