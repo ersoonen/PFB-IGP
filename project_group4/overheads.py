@@ -1,4 +1,4 @@
-## This will be used as a module
+## This code will be used as a module
 
 # Imported Path from pathlib and imported csv
 from pathlib import Path
@@ -7,7 +7,7 @@ import csv
 # Created fp_read variable and assigned the file path to the overheads-day-90.csv to it
 fp_read = Path.cwd()/"project_group4"/"csv_reports"/"overheads-day-90.csv"
 
-# Create 2 empty lists to store the data into the list
+# Create 2 empty lists to store the data into the respective lists
 highest_category_list = []
 highest_category_amt = []
 
@@ -35,7 +35,7 @@ def highest_overhead_amt():
     - No parameters required
     """
     
-    # Used the max() function to filter out the highest percentage value
+    # Used the max() function to filter out the highest percentage value in the list
     highest_overheads = max(highest_category_amt)
 
     for name in highest_category_list:
