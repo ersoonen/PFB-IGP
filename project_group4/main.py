@@ -9,10 +9,10 @@ def main():
     - This function will get functions from other modules and execute
     - No parameters required.
     """
-    
     overheads.highest_overhead_amt()
-    cash_on_hand.COH_diff()
     profit_loss.net_profit_diff()
-
+    cash_on_hand.COH_diff()
+    
+    
 # Will print out the summary report text file, consolidating everything.
 main()
