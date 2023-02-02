@@ -36,6 +36,7 @@ def COH_diff():
     - No parameters required
     """
     
+    # Used len(cash_on_hand_amt)-1 because we had 7 days (44-50) we just want 6 days (45-50)
     for number in range(0,(len(cash_on_hand_amt)-1)):
         previous_day = cash_on_hand_amt[number]
         current_day = cash_on_hand_amt[number+1]
@@ -52,7 +53,7 @@ def COH_diff():
                 
                 # Used .write() method and f strings to create and write the days where
                 # there are cash deficit and its respective amount
-                file.write(f"[CASH DEFICIT] DAY: {difference_day}, AMOUNT: USD{difference}" + "\n")
+                file.write(f"[CASH DEFICIT] DAY: {difference_day}, AMOUNT: USD ${difference}" + "\n")
 
     
 
