@@ -51,4 +51,10 @@ def net_profit_diff():
                 # Used .write() method and f strings to create and write the days where
                 # there are net profit deficit and its respective amount
                 file.write(f"[NET PROFIT DEFICIT] DAY: {difference_day}, AMOUNT: USD{difference}" + "\n")
+        elif current_day > previous_day:
+            break
+        
+        else:
+            with fp_write.open(mode="a", encoding="UTF-8", newline="") as file:
+                file.write(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY" + "\n")
 

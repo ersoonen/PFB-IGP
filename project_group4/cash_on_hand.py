@@ -53,6 +53,12 @@ def COH_diff():
                 # Used .write() method and f strings to create and write the days where
                 # there are cash deficit and its respective amount
                 file.write(f"[CASH DEFICIT] DAY: {difference_day}, AMOUNT: USD{difference}" + "\n")
+        elif current_day > previous_day:
+            break
+            
+        else:
+            with fp_write.open(mode="a", encoding="UTF-8", newline="") as file:
+                file.write(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY" + "\n")
 
 
 
