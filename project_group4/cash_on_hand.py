@@ -28,8 +28,8 @@ with fp_read.open(mode ="r", encoding = "UTF-8", newline = "") as file:
 # Setup filepath to "summary_report.txt" for writing results 
 fp_write = Path.cwd()/"project_group4"/"summary_report.txt"
 
-# Used def keyword to create the cash_on_hand_diff() function
-def cash_on_hand_diff():
+# Used def keyword to create the COH_diff() function
+def COH_diff():
     """
     - This function calculates the difference in cash on hand if cash on hand on the
     current day is lower than the previous day
@@ -37,13 +37,13 @@ def cash_on_hand_diff():
     """
     
     for number in range(0,(len(cash_on_hand_amt)-1)):
-        day_1 = cash_on_hand_amt[number]
-        day_2 = cash_on_hand_amt[number+1]
+        previous_day = cash_on_hand_amt[number]
+        current_day = cash_on_hand_amt[number+1]
 
-        # Creates condition that if current day (day_1) value is less than previous day (day_2) value, 
+        # Creates condition that if current day value is less than previous day value, 
         # it will return the difference amount or the cash deficit with the latest day printed.
-        if day_1 < day_2:
-            difference = day_2 - day_1
+        if current_day < previous_day:
+            difference = previous_day - current_day
             difference_day = cash_on_hand_list[number+1][0]
 
 
@@ -53,7 +53,6 @@ def cash_on_hand_diff():
                 # Used .write() method and f strings to create and write the days where
                 # there are cash deficit and its respective amount
                 file.write(f"[CASH DEFICIT] DAY: {difference_day}, AMOUNT: USD ${difference}" + "\n")
-                
 
 
 
