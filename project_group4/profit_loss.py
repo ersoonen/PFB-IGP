@@ -35,6 +35,7 @@ def net_profit_diff():
     - No parameters required
     """
     
+    # Used len(cash_on_hand_amt)-1 because we had 7 days (44-50) we just want 6 days (45-50)
     for number in range(0,(len(net_profit_amt)-1)):
         previous_day = net_profit_amt[number]
         current_day = net_profit_amt[number+1]
