@@ -11,7 +11,7 @@ fp_read = Path.cwd()/"project_group4"/"csv_reports"/"profit-and-loss-usd.csv"
 net_profit_list = []
 net_profit_amt = []
 
-# Using the .open() function to access the csv file which is for reading 
+# Using the .open() function to access the csv file which is for reading the file
 with fp_read.open(mode="r", encoding="UTF-8", newline="") as file:
     # Create csv reader object using csv
     reader = csv.reader(file)
@@ -20,7 +20,7 @@ with fp_read.open(mode="r", encoding="UTF-8", newline="") as file:
     next(reader)
     
     # Iterate each row with 'for' loop and append the days to net_profit_list
-    # and the respective net profit values to net_profit_amt
+    # and the respective net profit values to the net_profit_amt
     for line in reader:
         net_profit_list.append(line)
         net_profit_amt.append(float(line[4]))
